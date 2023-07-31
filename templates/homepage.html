@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head Section -->
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Homepage</title>
+
+    <!-- Bootstrap CSS File -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+
+
+    
+<style>
+
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+      
+      
+    *{
+           
+           box-sizing: border-box;
+           margin: 0;
+           padding: 0;
+           list-style: none;
+           font-family: 'Poppins' , sans-serif;
+      
+    }
+      
+    html{
+           scroll-behavior: smooth;
+    }
+    
+    body, html {
+         margin: 0;
+         padding: 0;
+     }
+      
+    /* Code Goes Here */
+    
+
+    
+    /* Navigation bar */
+    
+    nav{
+        
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    
+        padding: 10px ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 2000;
+    
+    }
+    
+    nav ul{
+        
+         margin: auto;
+    
+    }
+    
+    nav ul li{
+        
+        list-style: none;
+        display: inline-block;
+        margin-left: 3rem;
+        text-align: center;
+    
+    }
+    
+    nav ul li a{
+        
+        text-decoration: none;
+        font-weight: 500;
+        color: white;
+        font-size: 17px;
+        transition: color 0.2s ease-in-out;
+          
+    }
+    
+    nav ul li a:hover {
+         
+         color: #e6d07a; /* Changing the link color to white on hover */
+         transition: 0.5s;
+         font-weight: 600;
+         text-decoration: none;
+    
+    }
+    
+    
+    .logo{
+         
+      height: 4.3rem;
+    
+    }
+    
+    
+    /* Wallpaper */
+     
+    .slider {
+         width: 99vw;
+         height: 100vh;
+         max-width: 100vw;
+         margin: auto;
+         position: relative;
+         overflow: hidden;
+     }
+     
+     /* Slide List */
+     .list {
+         display: flex; /* Use flexbox to arrange slide items horizontally */
+     }
+     
+     /* Slide Item */
+     .item {
+         flex: 0 0 100%; /* Each slide item takes the full width of the slider */
+         height: 100%; /* Each slide item takes the full height of the slider */
+         overflow: hidden; /* Hide any content that may overflow */
+     }
+     
+     /* Slide Image */
+     .item img {
+         width: 100%; /* Make the image width cover the slide item */
+         height: 100%; /* Make the image height cover the slide item */
+         object-fit: cover; /* Ensure the image covers the entire slide item, preserving aspect ratio */
+     }
+    
+    
+    
+    
+    /* Medal Tally */
+    
+      
+    .gradient-bg {
+         height: 26rem;
+         background: linear-gradient(-50deg, #5062D6 40%, #FBF019 20%);
+     }
+     
+     .medal-tally-info {
+         
+         margin-top: 2rem;
+         margin-left: 5rem;
+         margin-bottom: 2rem;
+         width: 82%;
+         text-align: center;
+    
+     }
+    
+     .medal-tally-info p{
+          
+          margin: 1.3rem;
+          text-align: left;
+    
+     }
+     
+     .medal-tally-image img {
+         max-width: 100%;
+         height: 26rem;
+         display: block;
+         margin: auto;
+     }
+    
+    
+    
+     /* Country Analysis */
+    
+    
+    .gradient-bg4 {
+         height: 26rem;
+         background: linear-gradient(60deg, #292e44 45%, #f88d4c 20%);
+     }
+    
+    
+    .Country-info {
+         
+         width: 80%;
+         margin-top: 4rem;
+         margin-left: 6rem;
+         text-align: center;
+    
+    }
+    
+    .Country-info p{
+          
+          margin-top: 1rem;
+          text-align: left;
+    
+    }
+    
+    .Country-image img{
+    
+         max-width: 100%;
+         height: 26rem;
+         display: block;
+         margin: auto;
+    
+    }
+    
+    
+    /* Athlete Analysis  */
+    
+    
+    .gradient-bg3 {
+         height: 26rem;
+         background: linear-gradient(-50deg, #0A0505 40%, #F00E2E 20%);
+     }
+    
+    
+    .Athlete-info {
+         
+         width: 90%;
+         
+         margin-top: 4rem;
+         margin-left: 3rem;
+    
+         text-align: center;
+    
+    }
+    
+    .Athlete-info p{
+          
+          margin-top: 1.3rem;
+          text-align: left;
+    
+    }
+    
+    .Athlete-image img{
+    
+         max-width: 100%;
+         height: 26rem;
+         display: block;
+         margin: auto;
+         transform: scaleX(-1);
+    
+    }
+    
+    
+    /* Overall Analysis */
+    
+    .gradient-bg2 {
+         height: 26rem;
+         background: linear-gradient(50deg, #6dd47e 40%, #ffd55a 20%);
+         margin-bottom:15px;
+     }
+    
+    
+    .overall-info {
+    
+         width: 80%;
+         margin-top: 5rem;
+         margin-left: 6rem;
+         text-align: center;
+    
+    }
+    
+    .overall-info p{
+    
+         margin-top: 1.3rem;
+         text-align: left;
+    
+    }
+    
+    .overall-image img{
+    
+         max-width: 100%;
+         height: 26rem;
+         display: block;
+         margin: auto;
+         transform: scaleX(-1);
+    
+    }
+    
+    
+    
+    /* Footer */
+    
+    .container{
+        max-width: 1170px;
+        margin:auto;
+    }
+    
+    .r{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    ul{
+        list-style: none;
+    }
+    
+    .footer{
+        background-color: #24262b;
+        padding: 70px 0;
+    }
+    
+    .footer-col{
+       width: 25%;
+       padding: 0 15px;
+    }
+    .footer-col h4{
+        font-size: 18px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+         margin-left: 2rem;
+        font-weight: 500;
+        position: relative;
+    }
+    .footer-col h4::before{
+        content: '';
+        position: absolute;
+        left:0;
+        bottom: -10px;
+        background-color: #e91e63;
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+    }
+    
+    
+    
+    .footer-col ul li:not(:last-child){
+        margin-bottom: 10px;
+    }
+    
+    .footer-col ul li a{
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    .footer-col ul li a:hover{
+        color: #ffffff;
+        padding-left: 8px;
+    }
+    
+    
+    .footer-col .social-links a{
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(255,255,255,0.2);
+        margin:0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+    }
+    .footer-col .social-links a:hover{
+        color: #24262b;
+        background-color: #ffffff;
+    }
+    
+    .copy{
+         
+         color: white;
+         text-align: center;
+         margin-top: 5rem;
+     
+    }
+    
+    /*responsive*/
+    @media(max-width: 767px){
+      .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    }
+    @media(max-width: 574px){
+      .footer-col{
+        width: 100%;
+    }
+    }
+    
+    
+    
+    
+    
+    
+    /* Buttons And Options */
+    
+    
+    /*  Medal Tally !!! */
+    
+    .medal-button {
+     
+      width: 215px;
+      height: 50px;
+     
+      margin-left: 16rem;
+      padding-left: 40px;
+      
+      font-size: 20px;
+      font-weight: 500;
+      
+      background: #fff;
+      
+      border-radius: 7px;
+      display: flex;
+      
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    
+    }
+    
+    
+    
+    
+    
+    /* Country Analysis */
+    
+    
+    .gradient-bg4 {
+         height: 26rem;
+         background: linear-gradient(60deg, #292e44 45%, #f88d4c 20%);
+     }
+    
+    
+    .Country-info {
+         
+         width: 80%;
+         margin-top: 4rem;
+         margin-left: 6rem;
+         text-align: center;
+    
+    }
+    
+    .Country-info p{
+          
+          margin-top: 1rem;
+          text-align: left;
+    
+    }
+    
+    .Country-image img{
+    
+         max-width: 100%;
+         height: 26rem;
+         display: block;
+         margin: auto;
+    
+    }
+    
+    
+    /* Athlete Analysis  */
+    
+    
+    .gradient-bg3 {
+         height: 26rem;
+         background: linear-gradient(-50deg, #0A0505 40%, #F00E2E 20%);
+     }
+    
+    
+    .Athlete-info {
+         
+         width: 90%;
+         
+         margin-top: 4rem;
+         margin-left: 3rem;
+    
+         text-align: center;
+    
+    }
+    
+    .Athlete-info p{
+          
+          margin-top: 1.3rem;
+          text-align: left;
+    
+    }
+    
+    .Athlete-image img{
+    
+         max-width: 100%;
+         height: 26rem;
+         display: block;
+         margin: auto;
+         transform: scaleX(-1);
+    
+    }
+    
+    
+    /* Overall Analysis */
+    
+    .gradient-bg2 {
+         height: 26rem;
+         background: linear-gradient(50deg, #6dd47e 40%, #ffd55a 20%);
+     }
+    
+    
+    .overall-info {
+    
+         width: 80%;
+         margin-top: 5rem;
+         margin-left: 6rem;
+         text-align: center;
+    
+    }
+    
+    .overall-info p{
+    
+         margin-top: 1.3rem;
+         text-align: left;
+    
+    }
+    
+    .overall-image img{
+    
+         max-width: 100%;
+         height: 26rem;
+         display: block;
+         margin: auto;
+         transform: scaleX(-1);
+    
+    }
+    
+    
+    #carouselExampleCaptions {
+        max-width: 800px; /* Adjust the width as needed */
+        max-height: 500px; /* Adjust the height as needed */
+        margin: 0 auto; /* Center the carousel horizontally */
+      }
+      .carousel-inner img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover; /* This property ensures the image fills the container without distorting its aspect ratio */
+      }
+      .carousel-caption {
+        padding: 10px;
+      }
+
+      .news-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .news-description {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .carousel-item {
+        padding: 20px;
+      }
+
+      
+      .news-item {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .btn {
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+
+      /* Styles for the new h1 tag */
+    h1 {
+      margin-top:15px;
+      font-size: 48px;
+      text-align: center;
+      color: #333; /* Text color set to a dark gray */
+      font-family: "Arial", sans-serif; /* Specify the font family you prefer */
+      padding: 10px;
+      border: 2px solid #0074D9;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out; /* Adding a smooth transition for the hover effect */
+    }
+    
+    </style>
+
+
+
+    <!-- Font Awesome Files -->
+    <script src="https://kit.fontawesome.com/aed243d69b.js" crossorigin="anonymous"></script>
+
+
+    <!--    Bootstrap js files-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
+    <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+
+
+</head>
+
+
+
+<!-- Body Section -->
+
+
+<body>
+   
+    <!-- Section 1 :: Navbar -->
+
+    <nav>
+        
+        <ul>
+            
+            <li><a href = "/">HOME</a></li>
+            <li><a href = "/news">NEWS</a></li>
+            <li><a href = "/quiz">Quiz</a></li>
+            <li><a href = "/box">CHAT ROOM</a></li>
+            
+            <li><img class = "logo" src="static\images\olympic.png" alt="Logo" class="logo"></li>
+            
+            <li><a href = "/profile">PLAYERS</a></li>
+            <li><a href = "/highlights">HIGHLIGHTS</a></li>
+            <li><a href = "/contact">CONTACT US</a></li>
+
+        </ul>
+
+
+    </nav>
+ 
+    
+    <!-- Wallpaper -->
+ 
+    <div class="slider">
+
+        <div class="list">
+            <div class="item">
+                <img src="static\olympic img\Homepage Images\2023-Olympics.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--  Section 3 ::  Medal Tally  -->
+
+    <div id = "analysis" class="medal-tally gradient-bg">
+
+        <div class="row">
+
+            <div class="col-lg-6">
+                
+                <div class="medal-tally-info">
+                
+                    <h2>Medal Tally</h2>
+                    <p>Track Olympic achievements! View the latest medal count for countries. Choose a year and country from the dropdowns to see standings.</p>
+
+                </div>
+                
+                <!-- Medal Tally Button --> 
+                <a href="/medal">
+                    <button class="medal-button">Watch Tally!</button>
+                </a>
+
+                
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="medal-tally-image">
+                    <img src="static\olympic img\no bg\neymar pose 2 no bg.png" alt="Neymar">
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Country Analysis -->
+
+    <div  class = "Country gradient-bg4">
+
+        <div class="row">
+
+            <div class="col-lg-6">
+
+                <div class="Country-image">
+                    <img src="static\olympic img\no bg\Rantaka.png" alt="Neymar">
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+                
+                <div class="Country-info">
+                
+                    <h2>Country Analysis</h2>
+                    <p>Explore country performance in Olympics. Check historical medal tally and athlete records. Select a country from the dropdown to analyze.</p>
+                
+                </div>
+
+
+                <a href="/country">
+                    <button class="medal-button">Analyze Country!</button>
+                </a>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Athelete Analysis  -->
+
+    <div  class = "Athlete gradient-bg3">
+
+        <div class="row">
+
+
+            <div class="col-lg-6">
+    
+                <div class="Athlete-info">
+                
+                    <h2>Athlete Analysis</h2>
+                    <p>Delve into the brilliance of Olympic athletes! Explore individual performances and records. Select an athlete to view their journey to greatness.Delve into the brilliance of Olympic athletes! Explore individual performances and records. Select an athlete to view their journey to greatness.</p>
+                
+                </div>
+                
+                <a href="/athletes">
+                    <button class="medal-button">Analyze Athlete!</button>
+                </a>
+
+
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="Athlete-image">
+                    <img src="static\olympic img\no bg\chinese.png" alt="Neymar">
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Overall Analysis -->
+    
+    <div  class = "overall gradient-bg2">
+
+        <div class="row">
+
+            
+            <div class="col-lg-6">
+
+
+                <div class="overall-image">
+                    <img src="static\olympic img\no bg\michealnobg.png" alt="Neymar">
+                </div>
+
+
+            </div>
+
+
+
+            <div class="col-lg-6">
+
+                
+                <div class="overall-info">
+                
+                    <h2>Overall Analysis</h2>
+                    <p>Get a comprehensive view of the Olympics! Analyze medal distribution, top-performing countries, and standout athletes. Discover the essence of the Games in one place.</p>
+
+                </div>
+
+                <a href="/overall">
+                    <button class="medal-button">Overall Analysis!</button>
+                </a>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <div class="container">
+        <h1>Latest News</h1>
+        <div
+          id="carouselExampleCaptions"
+          class="carousel slide"
+          data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!-- Carousel items will be dynamically loaded here -->
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+    </div>
+  
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"
+      ></script>
+      <script>
+        const fetchTopNews = async () => {
+          try {
+            const response = await fetch("api/news");
+            const data = await response.json();
+            const carouselInner = document.querySelector(".carousel-inner");
+            let carouselHTML = "";
+            let resultCount = 0;
+            for (let i = 0; i < data.length; i++) {
+              const item = data[i];
+              carouselHTML += `
+                          <div class="carousel-item ${i === 0 ? "active" : ""}">
+                              <img src="${
+                                item.urlToImage
+                              }" class="d-block w-100" alt="News Image ${i + 1}">
+                              <div class="carousel-caption d-none d-md-block">
+                                  <h5 class="news-title">${item.title}</h5>
+                                  <p class="news-description">${
+                                    item.description
+                                  }</p>
+                                  <a href="${
+                                    item.url
+                                  }" target="_blank" class="btn btn-primary">Read Article</a>
+                              </div>
+                          </div>
+                      `;
+            }
+            carouselInner.innerHTML = carouselHTML;
+            resultCount = data.length;
+            document.getElementById("resultCount").textContent = resultCount;
+  
+            // Initialize the carousel after the news items are loaded
+            const carousel = new bootstrap.Carousel(
+              document.querySelector("#carouselExampleCaptions"),
+              {
+                interval: 5000, // Set the interval between slide transitions (in milliseconds)
+              }
+            );
+          } catch (error) {
+            console.error("Error fetching top news:", error);
+          }
+        };
+  
+        fetchTopNews();
+      </script>
+
+
+      
+    <!-- Footer  -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="r">
+
+                <div class="footer-col">
+                    <h4>Olympic Games</h4>
+                    <ul>
+                        <li><a href="#">Paris 2024</a></li>
+                        <li><a href="#">Results & Medals</a></li>
+                        <li><a href="#">Replays & Highlights</a></li>
+                        <li><a href="#">All Olympic Games</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4>Olympic Channel</h4>
+                    <ul>
+                        <li><a href="#">TV Channel</a></li>
+                        <li><a href="#">Live Events</a></li>
+                        <li><a href="#">Original Series</a></li>
+                        <li><a href="#">Corporate</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4>  News</h4>
+                    <ul>
+                        <li><a href="#">Podcast</a></li>
+                        <li><a href="#">Topics</a></li>
+                        <li><a href="#">Museum</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+        </div>
+
+        <p class = "copy"> Copyright © 2023 Paris Olympic, Inc.</p>
+
+   </footer>
+  
+
+
+</body>
+
+</html>

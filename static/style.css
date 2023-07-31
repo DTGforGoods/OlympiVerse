@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: url("static/olympic img/Homepage Images/background_img.png") center/cover no-repeat, #fae9fb;
+  
+  position: relative;
+
+}
+
+nav{
+    
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2000;
+
+}
+
+nav ul{
+  
+   margin: auto;
+
+}
+
+nav ul li{
+  
+  list-style: none;
+  display: inline-block;
+  margin-left: 3rem;
+  text-align: center;
+
+}
+
+nav ul li a{
+  
+  text-decoration: none;
+  font-weight: 500;
+  color: #171111;
+  font-size: 17px;
+  transition: color 0.2s ease-in-out;
+    
+}
+
+nav ul li a:hover {
+   
+   color: #e6d07a; /* Changing the link color to white on hover */
+   transition: 0.5s;
+   font-weight: 600;
+   text-decoration: none;
+
+}
+
+.logo{
+   
+   height: 4.3rem;
+
+}
+
+
+.container {
+  z-index: 12;
+  max-width: 1050px;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  margin: 0 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.container .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 20px;
+}
+.content .image-box {
+  max-width: 55%;
+}
+.content .image-box img {
+  width: 100%;
+}
+.content .topic {
+  font-size: 22px;
+  font-weight: 500;
+  color: #fb3f5f;
+}
+
+
+
+.content form {
+  width: 40%;
+  margin-right: 30px;
+}
+.content .input-box {
+  height: 50px;
+  width: 100%;
+  margin: 16px 0;
+  position: relative;
+}
+.content .input-box input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  padding: 0 16px;
+  background: #f6b54b;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+.content .input-box input:focus,
+.content .input-box input:valid {
+  border-color:  #f6b54b;
+  background-color: #fff;
+}
+.content .input-box label {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  color: #636c72;
+  font-size: 15px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+.content .input-box input:focus ~ label,
+.content .input-box input:valid ~ label {
+  top: 0;
+  left: 12px;
+  display: 14px;
+  color: #f6b54b;
+  background: #fff;
+}
+
+
+/* Enter Your Email */
+
+.content .input-box3 {
+  height: 50px;
+  width: 100%;
+  margin: 16px 0;
+  position: relative;
+}
+.content .input-box3 input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  padding: 0 16px;
+  background: #0e95c6;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+.content .input-box3 input:focus,
+.content .input-box3 input:valid {
+  border-color: #0e95c6;
+  background-color: #fff;
+}
+.content .input-box3 label {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  color: #636c72;
+  font-size: 15px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+.content .input-box3 input:focus ~ label,
+.content .input-box3 input:valid ~ label {
+  top: 0;
+  left: 12px;
+  display: 14px;
+  color: #0e95c6;
+  background: #fff;
+}
+
+
+
+/* Enter Your Message  */
+
+.content .message-box {
+  min-height: 100px;
+  position: relative;
+}
+.content .message-box textarea {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  resize: none;
+  background: #ff3d61;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  outline: none;
+  padding: 5px 16px;
+  transition: all 0.3s ease;
+}
+.content .message-box textarea:focus {
+  border-color: #ff3d61;
+  background-color: #fff;
+}
+.content .message-box label {
+  position: absolute;
+  font-size: 16px;
+  color: #636c72;
+  left: 18px;
+  top: 6px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.content .message-box textarea:focus ~ label {
+  left: 12px;
+  top: -10px;
+  color: #ff3d61;
+  font-size: 14px;
+  background: #fff;
+}
+
+
+
+/*  Send Message  */
+
+.content .input-box2 {
+  height: 50px;
+  width: 100%;
+  margin: 16px 0;
+  position: relative;
+}
+.content .input-box2 input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  padding: 0 16px;
+  background: #f6b54b;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.content .input-box2 input:focus,
+.content .input-box2 input:valid {
+  border-color:  #27a35b;
+  background-color: #fff;
+}
+.content .input-box2 label {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  color: #636c72;
+  font-size: 15px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+.content .input-box2 input:focus ~ label,
+.content .input-box2 input:valid ~ label {
+  top: 0;
+  left: 12px;
+  display: 14px;
+  color: #f6b54b;
+  background: #fff;
+}
+
+
+
+.content .input-box2 input[type="submit"] {
+  color: #fff;
+  background: #217945;
+  padding-left: 0;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+.content .input-box2 input[type="submit"]:hover {
+  background-color: #27a35b;
+}
+
+
+/* Responsive  */
+
+
+@media (max-width: 1000px) {
+  .content .image-box {
+    max-width: 70%;
+  }
+  .content {
+    padding: 10px 0;
+  }
+}
+@media (max-width: 900px) {
+  .content .image-box {
+    display: none;
+  }
+  .content form {
+    width: 100%;
+    margin-left: 30px;
+  }
+}

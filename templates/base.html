@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Chat App</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='chatstyle.css')}}" />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+    integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+  <!-- Section 1 :: Navbar -->
+
+  <nav>
+          
+    <ul>
+        
+      <li><a href = "/">HOME</a></li>
+      <li><a href = "/news">NEWS</a></li>
+      <li><a href = "/quiz">Quiz</a></li>
+      
+      <li><img class = "logo" src="static\images\olympic.png" alt="Logo" class="logo"></li>
+      
+      <li><a href = "/box">CHAT ROOM</a></li>
+      <li><a href = "/profile">PLAYERS</a></li>
+      <li><a href = "/highlights">HIGHLIGHTS</a></li>
+
+    </ul>
+
+  </nav>
+
+  <main style="background-image: url('static/olympic img/Homepage Images/1.jpg'); background-size: cover; background-position: center;">
+  <div class="content">
+
+    {% block content %} 
+    {% endblock %}
+
+  </div>
+
+
+    <!-- Footer  -->
+  <footer class="footer">
+    <div class="container">
+      <div class="r">
+        <div class="footer-col">
+          <h4>Olympic Games</h4>
+          <ul>
+            <li><a href="#">Paris 2024</a></li>
+            <li><a href="#">Results & Medals</a></li>
+            <li><a href="#">Replays & Highlights</a></li>
+            <li><a href="#">All Olympic Games</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Olympic Channel</h4>
+          <ul>
+            <li><a href="#">TV Channel</a></li>
+            <li><a href="#">Live Events</a></li>
+            <li><a href="#">Original Series</a></li>
+            <li><a href="#">Corporate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>News</h4>
+          <ul>
+            <li><a href="#">Podcast</a></li>
+            <li><a href="#">Topics</a></li>
+            <li><a href="#">Museum</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="copy">Copyright © 2023 Paris Olympic, Inc.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Glorious Moments</title>
+
+  <style>
+    :root {
+      --primary: linear-gradient(to bottom right, #0a0057, #3f00ee);
+      --secondary: gold;
+      --text: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #49c5b6;
+      color: #333;
+      font-family: sans-serif;
+    }
+
+    /* Navbar styles */
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: space-between;
+      padding: 30px;
+    }
+
+    nav ul {
+      margin-left: 30rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    nav li {
+      margin-right: 35px;
+    }
+
+    nav li:last-child {
+      margin-right: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.2s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #f6b54b;
+    }
+
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+
+
+
+    /* New container for background image and video */
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px; /* Limit the video container width if needed */
+      margin-right: 10rem;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .main-video{
+       
+         width: 60%;
+         margin-left: 2rem;
+
+    }
+
+    .main-video .title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff ;
+      margin-bottom: 0.5rem;
+      padding: 10px;
+      border: 2px solid #000;
+      border-radius: 20px;
+      -webkit-text-stroke: 2px #000; /* For WebKit-based browsers (Chrome, Safari, Opera) */
+      text-stroke: 2px #000; /* Standard property for modern browsers that support it */
+    }
+
+
+    .main-video video {
+      width: 100%; /* Video will take up the full width of the container */
+      border-radius: 0.5rem;
+      object-fit: cover; /* Keep the video size while filling the container */
+    }
+
+
+
+    /* Video Playlist */
+    .video-playlist {
+      width: 36%;
+      max-width: 1200px;
+      height:40%;
+      margin: 0 auto 4rem;
+      background-color: #333;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .video-playlist .title {
+      color: white;
+      font-size: 35px;
+      font-weight: 100;
+      padding-left: 1rem;
+    }
+
+    .video-playlist > p {
+      font-size: 20px;
+      padding: 1rem;
+      color: var(--secondary);
+    }
+
+    .video-playlist .videos {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .video-playlist .video {
+      min-width: 200px;
+      height: 80px;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      background-color: #444;
+    }
+
+    .video-playlist .video h4 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .video-playlist .video p {
+      font-size: 0.8rem;
+      color: #bbb;
+    }
+
+    /* Set the background image and adjust the size and positioning */
+    .background-container {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 850px; /* You can adjust the height as needed */
+      position: relative;
+    }
+
+    /* Style the video element and position it on top of the background */
+    .video-overlay {
+      width: 100%;
+      height: 90%;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -50px; /* Adjust the margin-top value as needed */
+    }
+
+    .video-overlay video {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+
+
+        /* Footer */
+
+        .container1{
+            max-width: 850px;
+            margin:auto;
+        }
+
+        .r{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        .footer {
+            height: 20rem; /* Set the desired height for the footer */
+            width: 100%;
+            background-color: #24262b;
+            padding: 40px 0; /* Adjust top and bottom padding as needed */
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0 15px;
+            margin-right: 6rem;
+            justify-content: center;
+        }
+        
+        .footer-col:last-child {
+            margin-right: 0;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            margin-left: 2rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            padding-left: 8px;
+        }
+
+        .footer-col .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+
+        .footer-col .social-links a:hover {
+            color: #24262b;
+            background-color: #ffffff;
+        }
+
+        .copy {
+            color: white;
+            text-align: center;
+            margin-top: 2rem; /* Adjust top margin as needed */
+        }
+
+        /*responsive*/
+        @media(max-width: 767px){
+        .footer-col{
+            width: 50%;
+            margin-bottom: 30px;
+        }
+        }
+        @media(max-width: 574px){
+        .footer-col{
+            width: 100%;
+        }
+        }
+  
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href = "/">HOME</a></li>
+      <li><a href = "/news">NEWS</a></li>
+      <li><a href = "/quiz">Quiz</a></li>
+      
+      <li><img class = "logo" src="static\images\olympic.png" alt="Logo" class="logo"></li>
+      
+      <li><a href = "/box">CHAT ROOM</a></li>
+      <li><a href = "/profile">PLAYERS</a></li>
+      <li><a href = "/highlights">HIGHLIGHTS</a></li>
+    </ul>
+  </nav>
+
+ 
+  <main style="background-image: url('static/olympic img/Homepage Images/11.png'); background-size: cover; background-position: center;">
+
+  <div class="background-container">
+ 
+      <div class="video-overlay">
+
+      <section class="main-video">
+
+        <div class="video-container">
+          <video src="{{ url_for('static', filename='videos/manipulate text background.mp4') }}" controls autoplay
+            muted></video>
+          <h3 class="title"></h3>
+        </div>
+      
+      </section>
+
+      <section class="video-playlist">
+        <h3 class="title">Watch Glorious Olympic Moments</h3>
+        <p>Some of Our Favourites &nbsp;</p>
+        <div class="videos">
+          <!-- Video Items Here -->
+          <div class="video" data-id="a1">
+            <h4 class="title">Neeraj Chopra Javelin Throw</h4>
+            <p class="time">3:05</p>
+          </div>
+          <div class="video" data-id="a2">
+            <h4 class="title">Neymar Amazing Penalty</h4>
+            <p class="time">2:10</p>
+          </div>
+          <div class="video" data-id="a3">
+            <h4 class="title">Phelps 200m 2016 Replay</h4>
+            <p class="time">1:32</p>
+          </div>
+          <div class="video" data-id="a4">
+            <h4 class="title">Men 100m Final 2016 Race</h4>
+            <p class="time">11:42</p>
+          </div>
+          <div class="video" data-id="a5">
+            <h4 class="title">Nadal finally wins GOLD_Rio 2016</h4>
+            <p class="time">1:00</p>
+          </div>
+          <div class="video" data-id="a6">
+            <h4 class="title">The BEST of Mondo Duplantis At the Olympics</h4>
+            <p class="time">6:05</p>
+          </div>
+          <div class="video" data-id="a7">
+            <h4 class="title">Lionel Messi At the Olympics!</h4>
+            <p class="time">6:43</p>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+
+  </div>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+          <div class="container1">  
+  
+              <div class="r">
+  
+                  <div class="footer-col">
+                      <h4>Olympic Games</h4>
+                      <ul>
+                          <li><a href="#">Paris 2024</a></li>
+                          <li><a href="#">Results & Medals</a></li>
+                          <li><a href="#">Replays & Highlights</a></li>
+                          <li><a href="#">All Olympic Games</a></li>
+                      </ul>
+                  </div>
+  
+  
+                  <div class="footer-col">
+                      <h4>Olympic Channel</h4>
+                      <ul>
+                          <li><a href="#">TV Channel</a></li>
+                          <li><a href="#">Live Events</a></li>
+                          <li><a href="#">Original Series</a></li>
+                          <li><a href="#">Corporate</a></li>
+                      </ul>
+                  </div>
+  
+  
+                  <div class="footer-col">
+                      <h4>  News</h4>
+                      <ul>
+                          <li><a href="#">Podcast</a></li>
+                          <li><a href="#">Topics</a></li>
+                          <li><a href="#">Museum</a></li>
+                          <li><a href="#">About Us</a></li>
+                      </ul>
+                  </div>
+  
+              </div>
+  
+          </div>
+  
+          <p class = "copy"> Copyright © 2023 Paris Olympic, Inc.</p>
+  
+    </footer>
+  
+
+
+  <script>
+    // JavaScript for Video Playlist Carousel
+    const mainVideo = document.querySelector(".video-container video");
+    const mainVideoTitle = document.querySelector(".video-container .title");
+    const videoPlaylist = document.querySelector(".video-playlist .videos");
+    const videos = document.querySelectorAll(".video");
+
+    let data = [
+      {
+        id: "a1",
+        title: "Neeraj Chopra Javelin Throw",
+        name: "Neeraj Chopra Final_Tokyo 2020 Replay.mp4",
+        duration: "3:05",
+      },
+      {
+        id: "a2",
+        title: "Neymar Amazing Penalty",
+        name: "Neymar penalty seals gold for hosts _ Rio 2016 Olympic Replay.mp4",
+        duration: "2:10",
+      },
+      {
+        id: "a3",
+        title: "Phelps 200m 2016 Replay",
+        name: "Phelps 200m Butterfly gold_Rio 2016 Replay.mp4",
+        duration: "1:32",
+      },
+      {
+        id: "a4",
+        title: "Men 100m Final 2016 Race",
+        name: "Men 100m Final_Rio 2016 Replay.mp4",
+        duration: "11:42",
+      },
+      {
+        id: "a5",
+        title: "Nadal finally wins GOLD_Rio 2016",
+        name: "Nadal finally wins GOLD_Rio 2016.mp4",
+        duration: "1:00",
+      },
+      {
+        id: "a6",
+        title: "The BEST of Mondo Duplantis At the Olympics",
+        name: "The BEST of Mondo Duplantis at the Olympics.mp4",
+        duration: "6:05",
+      },
+      {
+        id: "a7",
+        title: "Lionel Messi At the Olympics!",
+        name: "Lionel Messi at the Olympics!.mp4",
+        duration: "6:43",
+      },
+    ];
+
+    videos.forEach((video, index) => {
+      video.addEventListener("click", () => showVideo(index));
+    });
+
+    function showVideo(index) {
+      let matchVideo = data[index];
+      mainVideo.src = "static/videos/" + matchVideo.name;
+      mainVideoTitle.textContent = matchVideo.title;
+      videos.forEach((video, idx) => {
+        video.classList.toggle("active", idx === index);
+      });
+    }
+
+    // Show the first video initially
+    showVideo(0);
+  </script>
+
+</body>
+
+</html>

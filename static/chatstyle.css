@@ -1,0 +1,402 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  /* background-image: url("{{ url_for('static', filename='images/olympics image.jpg') }}"); */
+ 
+  /* Set background image size and behavior */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+a {
+  text-decoration: none;
+  color: #73adec;
+}
+
+/* Layout Styles */
+.content {
+  max-width: 800px;
+  
+  margin-left: 23rem;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.65); /* White with 65% transparency */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+form {
+  max-width: 400px;
+  height: 50rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Input Styles */
+label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+input[type="text"],
+input[type="color"],
+input[type="number"] {
+  width: 50%;
+  margin-bottom: 35px;
+  padding: 30px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+input[type="color"] {
+  width: 40px; /* Adjust the width to create a square */
+  height: 40px; /* Set the same height as the width to maintain a square shape */
+  padding: 0; /* Remove padding to make it a square */
+  margin-left: 40px; /* Move the color input to the left to align it beside the number input */
+}
+
+input[type="email"] {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0056b3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-bottom:1rem;
+  margin-top:1rem
+}
+
+button.create-btn {
+  background-color: #28a745; /* Green color for create button */
+  margin-bottom: 5rem;
+  margin-top:2rem;
+}
+
+button:hover {
+  background-color: hsl(0, 0%, 21%); /* Darker shade on hover */
+}
+
+/* Error Message Styles */
+ul {
+  list-style: none;
+  color: red;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Room.html Styles */
+.message-box {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.65); /* Transparent white (65% opacity) */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-top:15px;
+}
+
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #374080;
+}
+
+.super-chat-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9; /* Light background color for super-chat box */
+}
+
+h3 {
+  font-size: 35px;
+  margin-bottom: 85px;
+  color: #374080;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border-bottom: 4px solid #0074D9;
+  padding-bottom: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  width: 125%; /* Adjust the width to your preference */
+  margin-left: 0;
+  margin-right: auto;
+}
+
+h4 {
+  font-size: 25px;
+  margin-bottom: 25px;
+  color: black;
+}
+
+#super-chat-list {
+  list-style: none;
+  padding: 0;
+}
+
+#super-chat-list li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #73adec;
+  border-radius: 5px;
+  color: #73adec; /* Blue color for super-chat messages */
+}
+
+#recipient {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #fff; /* Background color for the dropdown */
+  color: #333; /* Text color */
+}
+
+.text {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: flex; /* Use flexbox to align the spans horizontally */
+  align-items: center; /* Align items vertically in the center */
+}
+
+.text strong {
+  margin-right: 5px; /* Add some spacing between the username and the message */
+}
+
+.muted {
+  font-size: 12px; /* Set a smaller font size for the date */
+  margin-left: auto; /* Push the date to the right side of the container */
+}
+
+/* Increase padding for the message */
+.text span:first-child {
+  padding: 10px; /* Adjust the padding as needed */
+}
+
+/* Style the dropdown arrow */
+#recipient::after {
+  content: "\25BE"; /* Unicode down arrow symbol */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Style the dropdown options */
+#recipient option {
+  padding: 10px;
+}
+
+/* Hide the default arrow provided by browsers */
+#recipient::-ms-expand {
+  display: none;
+}
+
+/* Style for the default placeholder option */
+#recipient option[value=""] {
+  color: #888; /* Placeholder color */
+}
+
+/* Updated Color Input Styles */
+#color {
+  margin-bottom: 20px; /* Add some margin-bottom to create spacing between super chat and color input */
+}
+
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.muted {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Footer */
+.container1{
+  max-width: 1170px;
+  margin:auto;
+}
+
+.r{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul{
+  list-style: none;
+}
+
+.footer {
+  height: 25rem; /* Set the desired height for the footer */
+  width: 100%;
+  background-color: #24262b;
+  padding: 40px 0; /* Adjust top and bottom padding as needed */
+}
+
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+  margin-right: 6rem;
+  justify-content: center;
+}
+
+.footer-col:last-child {
+  margin-right: 0;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  margin-left: 2rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+.copy {
+  color: white;
+  text-align: center;
+  margin-top: 2rem; /* Adjust top margin as needed */
+}
+
+/*responsive*/
+@media(max-width: 767px){
+.footer-col{
+  width: 50%;
+  margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+.footer-col{
+  width: 100%;
+}
+}
+
+/* Navbar styles */
+nav {
+  background-color: #24262b;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #73adec;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin: 0 10px;
+}

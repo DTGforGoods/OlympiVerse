@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Athlete's Age Distribution</title>
+    
+    <style>
+    
+        body {
+
+            font-family: Arial, sans-serif;
+            background-color: #49c5b6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        /* Navbar styles */
+        nav {
+            background-color: #333; /* Dark background color */
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        nav ul {
+            margin-left: 30rem;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav li {
+            margin-right: 35px; /* Add spacing between links */
+        }
+
+        nav li:last-child {
+            margin-right: 0; /* Remove margin from the last link */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff; /* White text color */
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.2s ease-in-out;
+        }
+
+        /* Change link color on hover */
+        nav a:hover {
+            color: #f6b54b; /* Gold color */
+        }
+
+        /* Style the logo image */
+        .logo {
+            height: 40px; /* Set the height of the logo */
+            width: auto; /* Auto width to maintain aspect ratio */
+        }
+        
+
+        /* Titles */
+
+        .main-heading{
+
+            font-size: 36px;
+            font-weight: 900;
+            color: #17252a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px; /* You can adjust the height as needed */
+
+        }
+
+        .main-heading2{
+
+            font-size: 40px;
+            font-weight: 900;
+            color: #17252a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px; /* You can adjust the height as needed */
+
+        }
+
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top :30px ;
+            margin-bottom :60px;
+            color: #007bff;
+        }
+
+        .hw-chart-container {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            margin-top:50px;
+        }
+
+
+
+        .form-container {
+            
+            width: 80%;
+            height: 5rem;
+
+            margin-top: 30px;
+            margin-bottom :20px;
+            margin-left: 20rem;
+
+            display: flex;
+            align-items: center;
+            
+        }
+
+        .form-container label {
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 3rem;
+            text-align: center; /* Center the content horizontally */
+            color:#17252a;
+        }
+
+        .form-container select {
+            padding: 8px 12px;
+            font-size: 30px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        .form-container input[type="submit"] {
+            
+            padding: 8px 16px;
+            font-size: 2rem;
+            
+            margin-left: 1rem;
+
+            background-color: #319d90;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #28776d;
+        }
+
+        .age-chart-container {
+            width: 100%;
+            height: 40rem;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin-top:30px;
+            margin-bottom:2px;
+        }
+        
+      
+
+    
+        /* Footer */
+
+       .container1{
+            max-width: 1170px;
+            margin:auto;
+        }
+
+        .r{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        .footer {
+            height: 15rem; /* Set the desired height for the footer */
+            width: 100%;
+            background-color: #24262b;
+            padding: 40px 0; /* Adjust top and bottom padding as needed */
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0 15px;
+            margin-right: 6rem;
+            justify-content: center;
+        }
+        
+        .footer-col:last-child {
+            margin-right: 0;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            margin-left: 2rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            padding-left: 8px;
+        }
+
+        .footer-col .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+
+        .footer-col .social-links a:hover {
+            color: #24262b;
+            background-color: #ffffff;
+        }
+
+        .copy {
+            color: white;
+            text-align: center;
+            margin-top: 2rem; /* Adjust top margin as needed */
+        }
+
+        /*responsive*/
+        @media(max-width: 767px){
+        .footer-col{
+            width: 50%;
+            margin-bottom: 30px;
+        }
+        }
+        @media(max-width: 574px){
+        .footer-col{
+            width: 100%;
+        }
+        }
+
+        .feature-heading {    
+            padding-top: 4rem;
+            padding-bottom: 1rem;
+            text-align: center; /* Center aligns the heading text */
+            font-size: 3rem; /* Sets the font size to 3rem (48px) */
+            font-weight: 600; /* Sets the font weight to bold */
+           
+        }
+
+        /* Styles for the span inside the feature heading */
+        .feature-heading  span {
+            background: #333; /* Sets the background color to a dark green */
+            color: #ffffff; /* Sets the text color to white */
+            display: inline-block; /* Makes the span an inline block element */
+            padding: 0.5rem 3rem; /* Adds padding around the text inside the span */
+        }
+
+        /* Styles for the span on hover */
+        .feature-heading span:hover {
+            background: rgb(32, 32, 32); /* Changes the background color on hover to a darker green */
+            box-shadow: #111; /* Adds a box shadow on hover (note: the box shadow here is missing some values, e.g., offset and blur radius) */
+        }
+    
+    </style>
+
+
+    <!-- Add Plotly library from CDN -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+      
+        <ul>
+            
+            <li><a href = "/">HOME</a></li>
+            <li><a href = "/news">NEWS</a></li>
+            <li><a href = "/quiz">Quiz</a></li>
+            
+            <li><img class = "logo" src="static\images\olympic.png" alt="Logo" class="logo"></li>
+            
+            <li><a href = "/box">CHAT ROOM</a></li>
+            <li><a href = "/profile">PLAYERS</a></li>
+            <li><a href = "/highlights">HIGHLIGHTS</a></li>
+
+        </ul>
+
+        
+    </nav>
+    
+
+
+    <div class="form-container">
+    
+        <form method="POST" action="/athletes">
+
+            <label for="sport">Select Sport:</label>
+            <select name="sport" id="sport">
+                {% for s in sports %}
+                <option value="{{ s }}">{{ s }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Submit">
+
+        </form>
+    
+    </div>
+
+
+    <h1 class="feature-heading"><span>Height Vs Weight for Male and Female Players</span></h1>
+
+    <div class="hw-chart-container" id ="hw-chart" ></div>
+
+    
+    <h1 class = "feature-heading"><span>Distribution of Athletes Ages by Medal Category!</span></h1>
+
+    <!-- Add the athletes' age distribution chart -->
+    <div class="age-chart-container" id ="age-chart"></div>
+    
+
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <div class="container1">
+
+            <div class="r">
+
+                <div class="footer-col">
+                    <h4>Olympic Games</h4>
+                    <ul>
+                        <li><a href="#">Paris 2024</a></li>
+                        <li><a href="#">Results & Medals</a></li>
+                        <li><a href="#">Replays & Highlights</a></li>
+                        <li><a href="#">All Olympic Games</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4>Olympic Channel</h4>
+                    <ul>
+                        <li><a href="#">TV Channel</a></li>
+                        <li><a href="#">Live Events</a></li>
+                        <li><a href="#">Original Series</a></li>
+                        <li><a href="#">Corporate</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4>  News</h4>
+                    <ul>
+                        <li><a href="#">Podcast</a></li>
+                        <li><a href="#">Topics</a></li>
+                        <li><a href="#">Museum</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+
+
+
+
+            </div>
+
+            
+
+        </div>
+
+        <p class = "copy"> Copyright © 2023 Paris Olympic, Inc.</p>
+
+   </footer>
+
+
+    <!-- Add the JavaScript code to plot the athletes' age distribution chart -->
+
+    <script type="text/javascript">
+        var a_graph = {{ athlete_graph | safe }};
+        Plotly.plot('age-chart', a_graph, {});
+    </script>
+
+    <script type="text/javascript">
+        var e_graph = {{ h_graph | safe }};
+        Plotly.plot('hw-chart', e_graph, {});
+    </script>
+
+
+</body>
+</html>

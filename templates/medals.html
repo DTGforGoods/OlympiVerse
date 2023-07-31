@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Medal Tally</title>
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Poppins' , sans-serif;
+            background-color: #ADD8E6;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(53, 51, 51);
+            margin: 2% 0;
+            font-size: 3rem;
+            padding-bottom: 2rem;
+            font-weight: 2000;
+        }
+        
+        /* Navbar styles */
+        nav {
+            background-color: #333; /* Dark background color */
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        nav ul {
+            margin-left: 30rem;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav li {
+            margin-right: 35px; /* Add spacing between links */
+        }
+
+        nav li:last-child {
+            margin-right: 0; /* Remove margin from the last link */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff; /* White text color */
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.2s ease-in-out;
+        }
+
+        /* Change link color on hover */
+        nav a:hover {
+            color: #f6b54b; /* Gold color */
+        }
+
+
+        /* Style the logo image */
+        .logo {
+            height: 40px; /* Set the height of the logo */
+            width: auto; /* Auto width to maintain aspect ratio */
+        }
+
+
+        .dropdown-container h2 {
+            margin-right: 1.5%;
+            font-size: 27px;
+            color: #555;
+            font-weight: 600;
+            display: inline; /* Display the heading elements inline with the selects */
+            padding-right: 5px; /* Add some spacing between the headings and selects */
+        }
+
+
+        /*Medal Tally*/
+        
+        .feature-heading  {    
+            padding-top: 1rem;
+            padding-bottom: 3rem;
+            text-align: center; /* Center aligns the heading text */
+            font-size: 3rem; /* Sets the font size to 3rem (48px) */
+            font-weight: 600; /* Sets the font weight to bold */
+            margin-bottom: 3rem; /* Adds space at the bottom of the heading */
+        }
+
+        /* Styles for the span inside the feature heading */
+
+        .feature-heading  span {
+            background: #333; /* Sets the background color to a dark green */
+            color: #ffffff; /* Sets the text color to white */
+            display: inline-block; /* Makes the span an inline block element */
+            padding: 0.5rem 5rem; /* Adds padding around the text inside the span */
+            clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%); /* Applies a custom clip-path to create a diagonal shape */
+        }
+
+        /* Styles for the span on hover */
+
+        .feature-heading span:hover {
+            background: rgb(32, 32, 32); /* Changes the background color on hover to a darker green */
+            box-shadow: #111; /* Adds a box shadow on hover (note: the box shadow here is missing some values, e.g., offset and blur radius) */
+        }        
+
+
+        /* Table Style */
+        .container {
+            max-width: 80%;
+            margin: 0 auto;
+            background-color: #ADD8E6;
+            padding: 2%;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2%;
+            font-size: 18px;
+        }
+
+        th {
+            background-color: #333333;
+            color: #fff;
+            text-align: left;
+            padding: 1.5%;
+            font-weight: 700; /* Make the heading row text bold */
+        }
+
+        td {
+            border: 1px solid #ccc;
+            padding: 1.5%;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fff; /* Even rows background color (white) */
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f9f9f9; /* Odd rows background color (greyish) */
+        }
+
+        .dropdown-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2%;
+        }
+
+        .dropdown-container label {
+            margin-right: 1%;
+            font-size: 18px;
+            color: #555; /* Change label text color */
+            font-weight: 400; /* Change label font weight */
+        }
+
+        .dropdown-container select#year,
+        .dropdown-container select#country {
+            padding: 1.5%;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f2f2f2; /* Light gray background */
+        }
+
+        .dropdown-container select#year {
+            margin-right: 3%; /* Add some spacing between the two selects */
+        }
+
+        input[type="submit"] {
+            padding: 1.5% 2%;
+            margin-left: 1rem;
+            font-size: 20px;
+            background-color: #004aad;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005fcc;
+        }
+
+
+        /* Footer */   
+        .container1{
+            max-width: 1170px;
+            margin:auto;
+        }
+        
+        .r{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        ul{
+            list-style: none;
+        }
+        
+        .footer{
+            background-color: #24262b;
+            padding: 70px 0;
+        }
+        
+        .footer-col{
+            width: 20%;
+            padding: 0 15px;
+        }
+
+        .footer-col h4{
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            margin-left: 2rem;
+            font-weight: 500;
+            position: relative;
+        }
+        .footer-col h4::before{
+            content: '';
+            position: absolute;
+            left:0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+        
+        .footer-col ul li:not(:last-child){
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a{
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover{
+            color: #ffffff;
+            padding-left: 8px;
+        }
+        
+        
+        .footer-col .social-links a{
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255,255,255,0.2);
+            margin:0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+        .footer-col .social-links a:hover{
+            color: #24262b;
+            background-color: #ffffff;
+        }
+        
+        .copy{
+            
+            color: white;
+            text-align: center;
+            margin-top: 5rem;
+        
+        }
+        
+
+        #player-list-section {
+            
+            padding-top: 0rem;
+            padding: 20px;
+            background-color: #ADD8E6;
+            
+        }
+
+        /* Center the table */
+        #player-list-section table {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+      
+        <ul>
+            
+            <li><a href = "/">HOME</a></li>
+            <li><a href = "/news">NEWS</a></li>
+            <li><a href = "/quiz">Quiz</a></li>
+            
+            <li><img class = "logo" src="static\images\olympic.png" alt="Logo" class="logo"></li>
+            
+            <li><a href = "/box">CHAT ROOM</a></li>
+            <li><a href = "/profile">PLAYERS</a></li>
+            <li><a href = "/highlights">HIGHLIGHTS</a></li>
+        </ul>
+
+
+    </nav>
+
+
+    <!-- Table -->
+    <div class="container">
+
+        <h1 class="feature-heading"><span>Medal Tally</span></h1>
+
+        <form method="POST" action="/medal" class="dropdown-container">
+
+            <h2>Select Year:</h2> 
+            <select name="year" id="year">
+                {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+
+            <h2>Select Country:</h2>
+            <select name="country" id="country">
+                {% for c in country %}
+                <option value="{{ c }}">{{ c }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+    </div>
+
+
+    
+    <div id="player-list-section">
+
+        {% if medal_data %}
+        <table>
+            <tr>
+                <th>Region</th>
+                <th>Gold</th>
+                <th>Silver</th>
+                <th>Bronze</th>
+                <th>Total</th>
+            </tr>
+            {% for row in medal_data %}
+            <tr>
+                <td>{{ row['region'] }}</td>
+                <td>{{ row['Gold'] }}</td>
+                <td>{{ row['Silver'] }}</td>
+                <td>{{ row['Bronze'] }}</td>
+                <td>{{ row['total'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    
+    </div>
+
+
+
+    <footer class="footer">
+
+        <div class="container1">
+
+            <div class="r">
+
+                <div class="footer-col">
+                    <h4>Olympic Games</h4>
+                    <ul>
+                        <li><a href="#">Paris 2024</a></li>
+                        <li><a href="#">Results & Medals</a></li>
+                        <li><a href="#">Replays & Highlights</a></li>
+                        <li><a href="#">All Olympic Games</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4>Olympic Channel</h4>
+                    <ul>
+                        <li><a href="#">TV Channel</a></li>
+                        <li><a href="#">Live Events</a></li>
+                        <li><a href="#">Original Series</a></li>
+                        <li><a href="#">Corporate</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4>  News</h4>
+                    <ul>
+                        <li><a href="#">Podcast</a></li>
+                        <li><a href="#">Topics</a></li>
+                        <li><a href="#">Museum</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+        </div>
+
+        <p class = "copy"> Copyright © 2023 Paris Olympic, Inc.</p>
+
+   </footer>
+
+
+</body>
+</html>

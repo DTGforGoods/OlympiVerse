@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="message-box">
+  <h2>Chat Room: {{code}}</h2>
+  <div class="super-chat-box">
+    <h4>Super Chat</h4>
+    <ul id="super-chat-list"></ul>
+    <div class="recipient-select">
+      <label for="recipient">Select a recipient:</label>
+      <select name="recipient" id="recipient">
+        <option value="">Choose a recipient</option>
+        <option value="Player 1">Player 1</option>
+        <option value="Player 2">Player 2</option>
+        <!-- Add more options based on the event participants -->
+      </select>
+    </div>
+  </div>
+  <div class="messages" id="messages"></div>
+  <div class="inputs">
+    <input type="text" rows="3" placeholder="Message" name="message" id="message" />
+    <input type="color" id="color" value="#000000">
+    <input type="number" id="amount" min="20" placeholder="Enter amount (min 20 Rs)">
+    <input type="email" id="email" placeholder="Enter your email">
+    <button type="button" name="send" id="send-btn" onClick="sendMessage()">Send</button>
+    <button type="button" name="send-superchat" id="send-superchat-btn" onClick="sendSuperChat()">Send Super Chat</button>
+  </div>
+</div>
+<script type="text/javascript">
+  var socketio = io();
+
+  const messages = document.getElementById("messages");
+  const superChatList = document.getElementById("super-chat-list");
+
+  const createMessage = (name, msg, superChat, color) => {
+    const content = `
+    <div class="text" style="${superChat ? `color: ${color}; font-weight: bold;` : ''}">
+        <span>
+            <strong>${name}</strong>: ${msg}
+        </span>
+        <span class="muted">
+            ${new Date().toLocaleString()}
+        </span>
+    </div>
+    `;
+    messages.innerHTML += content;
+  };
+
+  const createSuperChatMessage = (name, amount, msg, color, recipient) => {
+    let content = `<li style="color: ${color};">`;
+    if (recipient) {
+      content += `<strong>${name}</strong> contributed ₹${amount} to ${recipient}: ${msg}`;
+    } else {
+      content += `<strong>${name}</strong> contributed ₹${amount}: ${msg}`;
+    }
+    content += `</li>`;
+    superChatList.innerHTML += content;
+  };
+
+  socketio.on("message", (data) => {
+    if (data.super_chat) {
+      createSuperChatMessage(data.name, data.amount, data.message, data.color, data.recipient);
+    } else {
+      createMessage(data.name, data.message, false, null);
+    }
+  });
+
+  const sendMessage = () => {
+    const message = document.getElementById("message");
+    if (message.value == "") return;
+
+    const colorInput = document.getElementById("color");
+    const emailInput = document.getElementById("email");
+    const email = emailInput.value;
+
+    const data = {
+      data: message.value,
+      super_chat: false,
+      color: colorInput.value,
+      email: email,
+    };
+
+    socketio.emit("message", data);
+    message.value = "";
+  };
+
+  const sendSuperChat = () => {
+    const message = document.getElementById("message");
+    const amount = document.getElementById("amount");
+    const recipientSelect = document.getElementById("recipient");
+    const recipient = recipientSelect.value;
+
+    if (message.value == "" || amount.value < 20 || recipient === "") {
+      alert("Please enter a message, an amount of at least 20 Rs, and choose a recipient for Super Chat.");
+      return;
+    }
+
+    const colorInput = document.getElementById("color");
+    const emailInput = document.getElementById("email");
+    const email = emailInput.value;
+
+    const data = {
+      data: message.value,
+      super_chat: true,
+      amount: amount.value,
+      color: colorInput.value,
+      recipient: recipient,
+      email: email,
+    };
+
+    socketio.emit("message", data);
+    message.value = "";
+    amount.value = "";
+  };
+
+  // Event listener for the Enter key (key code 13) in the message input
+  document.getElementById("message").addEventListener('keydown', (event) => {
+    if (event.keyCode === 13 && !event.shiftKey) {
+      event.preventDefault(); // Prevent the default behavior of the Enter key (e.g., line break)
+      sendMessage();
+    }
+  });
+
+  // Event listener for the Enter key (key code 13) in the amount input
+  document.getElementById("amount").addEventListener('keydown', (event) => {
+    if (event.keyCode === 13) {
+      event.preventDefault(); // Prevent the default behavior of the Enter key (e.g., form submission)
+      sendSuperChat();
+    }
+  });
+
+</script>
+
+{% for msg in messages %}
+  {% if msg.super_chat %}
+    <script type="text/javascript">
+      createSuperChatMessage("{{msg.name}}", "{{msg.amount}}", "{{msg.message}}", "{{msg.color}}", "{{msg.recipient}}", false, null);
+    </script>
+  {% else %}
+    <script type="text/javascript">
+      createMessage("{{msg.name}}", "{{msg.message}}", false, null);
+    </script>
+  {% endif %}
+{% endfor %}
+{% endblock %}

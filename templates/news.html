@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <style>
+    /* Navigation bar */
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #b0e0e6; /* Set the background color for the whole page */
+      margin: 0;
+      padding: 0;
+    }
+  
+    nav {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 2000;
+        margin-bottom: 50px;
+        background-color : #333; /* Grey background color */
+    }
+    
+    nav ul {
+        margin: auto;
+    }
+    
+    nav ul li {
+        list-style: none;
+        display: inline-block;
+        margin-left: 3rem;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        font-weight: 500;
+        color: white;
+        font-size: 17px;
+        transition: color 0.2s ease-in-out;
+    }
+    
+    nav ul li a:hover {
+        color: #e6d07a;
+        /* Changing the link color to white on hover */
+        transition: 0.5s;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    
+    .logo {
+        height: 4.3rem;
+    }
+    
+  /* Footer */
+
+  .foot-container{
+    max-width: 1170px;
+    margin:auto;
+  }
+
+  .r{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  ul{
+    list-style: none;
+  }
+
+  .footer{
+    background-color: #24262b;
+      padding: 70px 0;
+  }
+
+  .footer-col{
+    width: 25%;
+    padding: 0 15px;
+  }
+  .footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+      margin-left: 2rem;
+    font-weight: 500;
+    position: relative;
+  }
+  .footer-col h4::before{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+  }
+
+
+
+  .footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  .footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+  }
+
+
+  .footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+  }
+  .footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+  }
+
+  .copy{
+      
+      color: white;
+      text-align: center;
+      margin-top: 5rem;
+  
+  }
+
+  /responsive/
+  @media(max-width: 767px){
+    .footer-col{
+      width: 50%;
+      margin-bottom: 30px;
+  }
+  }
+  @media(max-width: 574px){
+    .footer-col{
+      width: 100%;
+  }
+ }
+
+ .second-navbar {
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+.second-navbar .navbar {
+  margin-bottom: 0;
+  margin-top :50px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles for the container */
+/* General styles for the container */
+.container {
+  max-width: 800px;
+  margin: 12px auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Styles for the header */
+.container h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #0074D9;
+  border-bottom: 4px solid #0074D9;
+  padding-bottom: 10px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Styles for the content */
+.content {
+  /* Add your content styles here if needed */
+}
+
+/* Styles for the buttons */
+.container .btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.container .btn:hover {
+  background-color: #0056b3;
+}
+
+.search-form {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+#searchInput {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  font-size: 16px;
+}
+
+#search {
+  padding: 10px 20px;
+  border: none;
+  background-color: #0074D9;
+  color: #fff;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#search:hover {
+  background-color: #0056b3;
+}
+
+#search:focus {
+  outline: none;
+}
+
+
+</style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+  
+    <!-- First Navbar -->
+    <nav>
+      <ul>
+        <li><a href = "/">HOME</a></li>
+        <li><a href = "/news">NEWS</a></li>
+        <li><a href = "/quiz">Quiz</a></li>
+        
+        <li><img class = "logo" src="static\images\olympic.png" alt="Logo" class="logo"></li>
+        
+        <li><a href = "/box">CHAT ROOM</a></li>
+        <li><a href = "/profile">PLAYERS</a></li>
+        <li><a href = "/highlights">HIGHLIGHTS</a></li>
+      </ul>
+    </nav>
+
+    <!-- Second Navbar -->
+    <div class="second-navbar"> <!-- Changed from <nav> to <div> -->
+      <div class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+              <h1>NewsApp</h1>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <!-- Add your second navbar links here -->
+                      <!-- Add more links as needed -->
+                  </ul>
+                  <form class="d-flex" role="search">
+                      <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button id="search" class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    
+  <div class="container">
+    <h1>Welcome to news App (<span id="resultCount"></span> Results)</h1>
+    <div class="row content">
+    
+                
+    </div>
+    <div class="d-flex justify-content-around my-4">
+        <button class="btn btn-primary" id = "prev">&lt; Previous Page</button>
+        <button class="btn btn-primary" id = "next">Next Page &gt;</button>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script>
+    let currentQuery = "Olympics"
+    let currentPage =1;
+    const fetchNews = async (page, q) => 
+    {   
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        const formattedYesterday = yesterday.toISOString().split('T')[0];
+        console.log(`fetching news for ${q}, Page number ${page}..`);
+        const apiKey = '85396186afa24350819d24eb0fb72951'; 
+        const url = `https://newsapi.org/v2/everything?q=${q}&from=${formattedYesterday}&language=en&pageSize=20&page=${page}&sortBy=popularity`;
+
+        const headers = new Headers();
+        headers.append('x-api-key', apiKey);
+
+        const requestOptions = {
+            method: 'GET',
+            headers: headers,
+        };
+
+        try {
+            const response = await fetch(url, requestOptions);
+            const responseData = await response.json();
+            console.log(JSON.stringify(responseData));
+            // here
+            console.log(responseData);
+
+            let str = "";
+            resultCount.innerHTML = responseData.totalResults;
+            for (let item of responseData.articles) {
+            str += `
+                <div class="card my-4 mx-2" style="width: 18rem;">
+                <img height="195" src="${item.urlToImage}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${item.title.slice(0,25)}</h5>
+                    <p class="card-text">${item.description.slice(0,125)}...</p>
+                    <a href="${item.url}" target="_blank" class="btn btn-primary">Read Article</a>
+                </div>
+                </div>
+            `;
+            }
+            document.querySelector(".content").innerHTML = str;
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+    fetchNews(1, currentQuery)
+    search.addEventListener("click", (e)=>{
+        e.preventDefault()
+        let query = searchInput.value;
+        currentQuery = query
+        fetchNews(1, query)
+
+    }) 
+    prev.addEventListener("click", (e)=>{
+        e.preventDefault()
+        if(currentPage>1){
+            currentPage = currentPage - 1
+            let query = searchInput.value;
+            
+            fetchNews(currentPage, currentQuery)
+        }
+
+    }) 
+    next.addEventListener("click", (e)=>{
+        e.preventDefault()
+        currentPage = currentPage + 1
+        let query = searchInput.value;
+        
+        fetchNews(currentPage, currentQuery)
+
+    })       
+  </script>
+
+    <!-- Footer  -->
+
+      <footer class="footer">
+
+        <div class="foot-container">
+
+            <div class="r">
+
+                <div class="footer-col">
+                    <h4>Olympic Games</h4>
+                    <ul>
+                        <li><a href="#">Paris 2024</a></li>
+                        <li><a href="#">Results & Medals</a></li>
+                        <li><a href="#">Replays & Highlights</a></li>
+                        <li><a href="#">All Olympic Games</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4>Olympic Channel</h4>
+                    <ul>
+                        <li><a href="#">TV Channel</a></li>
+                        <li><a href="#">Live Events</a></li>
+                        <li><a href="#">Original Series</a></li>
+                        <li><a href="#">Corporate</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4>  News</h4>
+                    <ul>
+                        <li><a href="#">Podcast</a></li>
+                        <li><a href="#">Topics</a></li>
+                        <li><a href="#">Museum</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+        </div>
+
+        <p class = "copy"> Copyright © 2023 Paris Olympic, Inc.</p>
+
+  </footer>
+  </body>
+</html>
