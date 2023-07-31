@@ -37,7 +37,12 @@ OlympiVerse is a comprehensive platform for Olympic Games analysis and informati
 
 
 📊 Screenshots :
-
+![WhatsApp Image 2023-07-31 at 22 35 56](https://github.com/DTGforGoods/OlympiVerse/assets/141049696/f0ac64b5-ac84-4dde-8be1-435134ef1270)
+![WhatsApp Image 2023-07-31 at 22 35 57 (1)](https://github.com/DTGforGoods/OlympiVerse/assets/141049696/4b5f6b9f-f0cb-46e7-bf54-5c19aff2cf73)
+![WhatsApp Image 2023-07-31 at 22 35 57](https://github.com/DTGforGoods/OlympiVerse/assets/141049696/c24a10ef-abd7-4360-96b6-66a83093750a)
+![WhatsApp Image 2023-07-31 at 22 35 58](https://github.com/DTGforGoods/OlympiVerse/assets/141049696/e23a2ed3-57fd-44c7-9f73-709e32b1addc)
+![WhatsApp Image 2023-07-31 at 22 35 59 (1)](https://github.com/DTGforGoods/OlympiVerse/assets/141049696/04a59b40-2197-49b9-9339-37c6a85de7ea)
+![WhatsApp Image 2023-07-31 at 22 35 59](https://github.com/DTGforGoods/OlympiVerse/assets/141049696/c32b3c6d-f538-4963-868e-492a467d0b80)
 
 
 
