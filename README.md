@@ -40,6 +40,7 @@ OlympiVerse is a comprehensive platform for Olympic Games analysis and informati
 
 
 
+
 🚀 Future Scopes :
 
 1.	Integration of a chatbot to provide Users with real-time answers to their questions and concerns.
@@ -47,6 +48,6 @@ OlympiVerse is a comprehensive platform for Olympic Games analysis and informati
 3.	User Authentication: Implement secure user authentication and authorization for personalized experiences.
 4.	Multi-Language Support: Implement language localization to cater to a broader international audience and enhance accessibility.
 5.	Social Media Integration: Allow users to share their favorite Olympic moments and insights on various social media platforms, fostering engagement and increasing app visibility.
+   
 👥 Feedback/Questions: 
-
 If you have any questions about this software, please contact nareshvaishnavrko11@gmail.com or yadavsunny0312@gmail.com.
