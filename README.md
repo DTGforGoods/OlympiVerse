@@ -5,6 +5,8 @@
 
 OlympiVerse is a comprehensive platform for Olympic Games analysis and information. It is built using Flask and integrates data preprocessing, data visualization, news fetching, chat rooms, and player profiles. Users can analyze medal data across different years and countries, view overall Olympics statistics, explore country-wise analysis, and examine athletes' data. Additionally, the app provides real-time news updates related to the Olympics. Furthermore, users can interact via chat rooms to discuss various topics and explore player profiles with detailed information about each athlete.
 
+Live Website Link: http://ec2-16-170-215-71.eu-north-1.compute.amazonaws.com:8080
+CheckOut Our Youtube Video: https://youtu.be/N5408qhvTTg
 
 💻 Key Feature :
 
